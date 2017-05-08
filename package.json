@@ -1,0 +1,30 @@
+{
+  "name": "video_space_server",
+  "version": "1.0.0",
+  "description": "128.199.91.116 - Nodejs server to handle request retrive video url from server's DB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quytm2239/VideoSpace.git"
+  },
+  "author": "Tran Manh Quy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quytm2239/VideoSpace/issues"
+  },
+  "homepage": "https://github.com/quytm2239/VideoSpace#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "mongoose": "^4.9.8",
+    "morgan": "^1.8.1",
+    "node-schedule": "^1.2.1",
+    "socket.io": "^1.7.4",
+    "winston": "^2.3.1"
+  }
+}

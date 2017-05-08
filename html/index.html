@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-router@3.0.2/umd/ReactRouter.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://findlove.cf/socket.io/socket.io.js"></script>
+  <script src="index.js"></script>
+  <script src="js/login.js"></script>
+  <style>
+
+	* { margin: 0; padding: 0; }
+	html {
+		background: url(img/main_bg.png) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+    body {
+        background-color: transparent;
+        padding: 20px;
+        margin: 0;
+        /* set background for body*/
+        /**
+        background-image:    url(img/main_bg.png);
+        background-size:     cover;
+        background-repeat:   no-repeat;
+        background-position: center center;
+        */
+    }
+    h1, h2, p, ul, li {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    ul.header li {
+        display: inline;
+        list-style-type: none;
+        margin: 0;
+    }
+    ul.header {
+      background-color: #fbe7ef;
+      padding: 0;
+    }
+    ul.header li a {
+      color: #FFF;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 20px;
+      display: inline-block;
+    }
+    .content {
+      /*background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      padding: 20px;*/
+    }
+    .content h2 {
+      padding: 0;
+      margin: 0;
+    }
+    .content li {
+      margin-bottom: 10px;
+    }
+    .active {
+      background-color: #0099FF;
+    }
+
+    .App {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        width:25em;
+        height:18em;
+        margin-top: -9em; /*set to a negative number 1/2 of your height*/
+        margin-left: -12.5em; /*set to a negative number 1/2 of your width*/
+        /*border: 1px solid #ccc;
+        background-color: #f3f3f3;*/
+    }
+
+    div.Login {
+        /* make layout center*/
+        /*margin: auto;
+        width: 50%;
+        padding: 0px;*/
+        background-color: rgba(150, 150, 150, 0.6);
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    h2.Login {
+        padding: 10px;
+    }
+
+    table.Login {
+        width: 100%;
+        padding-bottom: 15px;
+    }
+
+    #tdLeft {
+        width: 15% !important;
+    }
+
+    #tdRight {
+        width: 85% !important;
+    }
+
+    #imgPerson, #imgWhiteLock {
+        width: 40px !important;
+        height: 40px !important;
+        padding-top: 15px;
+    }
+
+    #inputLoginID, #inputPassword {
+        font-size : 20px;
+        background-color : transparent;
+        padding: 10px;
+        border: none;
+        border-bottom: solid 2px #ffffff;
+        transition: border 0.3s;
+    }
+
+    #btnLogin {
+        width: 80px !important;
+        height: 40px !important;
+    }
+
+  </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+    </div>
+
+    <script type="text/babel">
+        var { Router,
+        Route,
+        IndexRoute,
+        IndexLink,
+        hashHistory,
+        Link } = ReactRouter;
+
+    var destination = document.querySelector("#container");
+
+    var App = React.createClass({
+
+      render: function() {
+        return (
+          <div className="App">
+            <div className="content">
+                {this.props.children}
+            </div>
+          </div>
+        )
+      }
+    });
+
+    var Login = React.createClass({
+        render: function() {
+            return (
+            <div className="Login">
+                <h2 className="Login">ĐĂNG NHẬP</h2>
+                <table className="Login">
+                    <tbody>
+                        <tr>
+                            <td id="tdLeft"><img id="imgPerson" src="img/login/ic_person_white.png"></img></td>
+                            <td id="tdRight"><input id="inputLoginID" type="text" placeholder="Enter username/email"></input></td>
+                        </tr>
+                        <tr>
+                            <td id="tdLeft"><img id="imgWhiteLock" src="img/login/ic_lock_outline_white.png"></img></td>
+                            <td id="tdRight"><input id="inputPassword" type="password" placeholder="Enter password"></input></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" id="btnLogin">LOGIN</button>
+            </div>
+          );
+        }
+    });
+
+    ReactDOM.render(
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Login}/>
+        </Route>
+      </Router>,
+      destination
+    );
+
+  </script>
+</body>
+
+</html>
