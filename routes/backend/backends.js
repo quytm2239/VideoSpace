@@ -18,9 +18,6 @@ module.exports = function(app, mongoose, config){
 	app.use(config.api_path,rootRouter);
 
 	rootRouter.post('/video', function(req, res) {
-		console.log('POST: /video');
-
-		mongoose.connect(config.mongoose_connect);
 
 		var db = mongoose.connection;
 		db.on('error', console.error.bind(console, 'connection error:'));
@@ -47,20 +44,45 @@ module.exports = function(app, mongoose, config){
 
 	});
 
+	//=============================[CATEGORY]===================================
 	rootRouter.post('/category', function(req, res) {
-		console.log('POST: /category');
+
+		var db = mongoose.connection;
+		db.on('error', console.error.bind(console, 'connection error:'));
+		db.once('open', function() {
+		  console.log('we are connected');
+		});
 
 		var cate = new Category({
 			name: req.body.name
 		});
 		cate.save(function (err) {
 			if (err) {
-				return handleError(err);
+				res.status(500).send({
+					message: err
+				});
 			} else {
 				res.status(200).send({
 					message: 'Successfully save:' + cate.name
 				});
 			}
 		});
+	});
+
+	rootRouter.get('/category', function(req, res) {
+
+		var db = mongoose.connection;
+		db.on('error', console.error.bind(console, 'connection error:'));
+		db.once('open', function() {
+		  console.log('we are connected');
+		});
+
+		Category.find({}).exec(function(err, result) {
+	      	if (!err) {
+	        	// handle result
+	      	} else {
+	        	// error handling
+	      	};
+	    });
 	});
 };

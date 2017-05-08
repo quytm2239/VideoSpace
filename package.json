@@ -2,7 +2,6 @@
   "name": "video_space_server",
   "version": "1.0.0",
   "description": "128.199.91.116 - Nodejs server to handle request retrive video url from server's DB",
-  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"

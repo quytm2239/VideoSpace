@@ -4,8 +4,10 @@
 // setting is defined in /config
 var client_path = './client';
 var backend_path = './backend';
+var home_path = './home';
 
 module.exports = function(app, mongoose, config){
-	require(main_screen_path + '/main_screen')(app, mongoose, config);
-	require(backend_path + '/backend')(app, mongoose, config);
+	require(home_path + '/home')(app, mongoose, config);
+ 	require(client_path + '/clients')(app, mongoose, config);
+ 	require(backend_path + '/backends')(app, mongoose, config);
 };

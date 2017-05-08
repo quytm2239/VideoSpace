@@ -111,6 +111,9 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect(config.mongoose_connect);
 // app is express's app
 // setting is defined in /config
-routes = require('./routes')(app, config);
+routes = require('./routes')(app, mongoose, config);
