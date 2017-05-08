@@ -14,7 +14,7 @@ var video = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var Video = mongoose.model('Video', video);
+var Video = mongoose.model('Video', video, 'Video');
 
 // make this available to our users in our Node applications
 module.exports = Video;

@@ -454,3 +454,19 @@
 
 2017-05-08T14:15:42.066Z - info: {"remote_addr": "::1", "date": "08/May/2017:14:15:42 +0000", "method": "GET", "url": "/home", "http_version": "1.1", "status": "200", "result_length": "40", "user_agent": "PostmanRuntime/3.0.11-hotfix.2", "response_time": "1.211"}
 
+2017-05-08T14:17:12.079Z - info: {"remote_addr": "::ffff:127.0.0.1", "date": "08/May/2017:14:17:12 +0000", "method": "GET", "url": "/ping", "http_version": "1.1", "status": "404", "result_length": "143", "user_agent": "BlueStacks/2.7.315.8233/36f2f10b-2f4f-11e7-836d-14dae9c3af50 gzip", "response_time": "3.371"}
+
+2017-05-08T14:17:12.082Z - info: {"remote_addr": "::ffff:127.0.0.1", "date": "08/May/2017:14:17:12 +0000", "method": "GET", "url": "/ping", "http_version": "1.1", "status": "404", "result_length": "143", "user_agent": "BlueStacks/2.7.315.8233/36f2f10b-2f4f-11e7-836d-14dae9c3af50 gzip", "response_time": "0.555"}
+
+2017-05-08T14:21:24.456Z - info: {"remote_addr": "::ffff:127.0.0.1", "date": "08/May/2017:14:21:24 +0000", "method": "GET", "url": "/ping", "http_version": "1.1", "status": "404", "result_length": "143", "user_agent": "BlueStacks/2.7.315.8233/36f2f10b-2f4f-11e7-836d-14dae9c3af50 gzip", "response_time": "0.578"}
+
+2017-05-08T14:21:24.728Z - info: {"remote_addr": "::ffff:127.0.0.1", "date": "08/May/2017:14:21:24 +0000", "method": "GET", "url": "/ping", "http_version": "1.1", "status": "404", "result_length": "143", "user_agent": "BlueStacks/2.7.315.8233/36f2f10b-2f4f-11e7-836d-14dae9c3af50 gzip", "response_time": "0.721"}
+
+2017-05-08T14:21:24.931Z - info: {"remote_addr": "::ffff:127.0.0.1", "date": "08/May/2017:14:21:24 +0000", "method": "GET", "url": "/ping", "http_version": "1.1", "status": "404", "result_length": "143", "user_agent": "BlueStacks/2.7.315.8233/36f2f10b-2f4f-11e7-836d-14dae9c3af50 gzip", "response_time": "0.493"}
+
+2017-05-08T14:25:41.760Z - info: {"remote_addr": "::ffff:127.0.0.1", "date": "08/May/2017:14:25:41 +0000", "method": "GET", "url": "/ping", "http_version": "1.1", "status": "404", "result_length": "143", "user_agent": "BlueStacks/2.7.315.8233/36f2f10b-2f4f-11e7-836d-14dae9c3af50 gzip", "response_time": "4.115"}
+
+2017-05-08T14:26:00.961Z - info: {"remote_addr": "::1", "date": "08/May/2017:14:26:00 +0000", "method": "POST", "url": "/category", "http_version": "1.1", "status": "200", "result_length": "41", "user_agent": "PostmanRuntime/3.0.11-hotfix.2", "response_time": "175.227"}
+
+2017-05-08T14:26:18.837Z - info: {"remote_addr": "::1", "date": "08/May/2017:14:26:18 +0000", "method": "GET", "url": "/category", "http_version": "1.1", "status": "200", "result_length": "103", "user_agent": "PostmanRuntime/3.0.11-hotfix.2", "response_time": "177.184"}
+

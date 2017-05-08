@@ -80,8 +80,10 @@ module.exports = function(app, mongoose, config){
 		Category.find({}).exec(function(err, result) {
 	      	if (!err) {
 	        	// handle result
+				res.status(200).send(result);
 	      	} else {
 	        	// error handling
+				res.status(500).send(err);
 	      	};
 	    });
 	});

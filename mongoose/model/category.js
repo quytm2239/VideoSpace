@@ -11,7 +11,7 @@ var category = new Schema({
 
 // the schema is useless so far
 // we need to create a model using it
-var Category = mongoose.model('Category', category);
+var Category = mongoose.model('Category', category, 'Category');
 
 // make this available to our users in our Node applications
 module.exports = Category;
