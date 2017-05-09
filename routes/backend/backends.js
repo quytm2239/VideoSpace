@@ -8,6 +8,8 @@ module.exports = function(app, mongoose, config){
 
 	app.use(config.api_path,rootRouter);
 
+	var async = require('async');
+
 	var utils = app.get('utils');
 	var errcode = app.get('errcode');
 
@@ -69,6 +71,38 @@ module.exports = function(app, mongoose, config){
 		});
 	});
 
+	rootRouter.post('/categories', function(req, res) {
+
+		var cateArray = [];
+		var cateNameArray = utils.chkObj(req.body.categories) ? req.body.categories.split('|') : [];
+
+		var db = mongoose.connection;
+		db.on('error', console.error.bind(console, 'connection error:'));
+		db.once('open', function() {
+			console.log('we are connected');
+		});
+
+		async.mapLimit(cateNameArray, 20, function(name, callback) {
+			new Category({
+		  		name: name
+			}).save();
+		  	async.setImmediate(function () {
+				callback();
+		  	});
+		},function (err,results) {
+			if (err) {
+				res.status(500).send({
+					message: err
+				});
+			} else {
+				res.status(200).send({
+					message: 'Successfully insert all category!'
+				});
+			}
+		});
+	});
+
+
 	rootRouter.get('/category', function(req, res) {
 
 		var db = mongoose.connection;
@@ -79,11 +113,11 @@ module.exports = function(app, mongoose, config){
 
 		Category.find({}).exec(function(err, result) {
 	      	if (!err) {
-	        	// handle result
-				res.status(200).send(result);
+	        		// handle result
+							res.status(200).send(result);
 	      	} else {
-	        	// error handling
-				res.status(500).send(err);
+	        		// error handling
+							res.status(500).send(err);
 	      	};
 	    });
 	});
