@@ -8,6 +8,7 @@ var video = new Schema({
   name: String,
   desc: String,
   url: String,
+  thumb: String,
   category: String,
   created_at: { type: Date, default: Date.now }
 });
