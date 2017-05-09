@@ -8,6 +8,6 @@ module.exports={
 		database: 'dating',
 		debug: false
 	},
-	mongoose_connect: 'mongodb://128.199.91.116/VideoSpace',
+	mongoose_connect: 'mongodb://localhost/VideoSpace',
 	api_path: '/'
 };
